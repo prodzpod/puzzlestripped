@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    overflow: hidden;
+    user-select: none;
+    cursor: default;
+    background-color: #d0ffce;
+    background-image: url("./grid.png");
+    animation: bg-scroll 30s linear infinite;
+    overflow-x: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@keyframes bg-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 100vmax 100vmax; }
+}
+
+#game {
+    border: none;
+    width: 80vmin;
+    height: 80vmin;
+    display: block;
+    position: relative;
+    background-color: #666;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.entity, .character {
+    position: absolute;
+    margin: 0;
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated; /* Chrome */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    max-height: 6vh;
+    background-color: #333;
+    color: #888;
+    font-size: 3vh;
+    padding: 1.5vh calc(50% - 11.1vh);
+    vertical-align: middle;
+    word-break: keep-all;
+}
